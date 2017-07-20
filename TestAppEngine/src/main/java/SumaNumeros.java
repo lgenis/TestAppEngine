@@ -20,7 +20,6 @@ public class SumaNumeros  extends HttpServlet{
 	
 		// Set response content type
 	      response.setContentType("text/html");
-	 
 	      PrintWriter out = response.getWriter();
 	      String title = "Fecha  & Hora";
 	      Date date = new Date();

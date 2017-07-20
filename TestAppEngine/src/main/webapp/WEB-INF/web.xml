@@ -44,8 +44,17 @@
     <url-pattern>/currentdate</url-pattern>
   </servlet-mapping>
   
-   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-  </welcome-file-list>
+          <!--Get ADmins Servlet -->
+
+  <servlet>
+    <servlet-name>getadmins</servlet-name>
+    <servlet-class>GetAdmins</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>getadmins</servlet-name>
+    <url-pattern>/getadmins</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>
