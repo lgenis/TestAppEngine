@@ -39,12 +39,14 @@ public class SumaNumeros  extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 		  PrintWriter out = response.getWriter();
-	      String title = "Suma dos numeros";
+	      String title = "Opera con dos numeros";
 	      Date date = new Date();
 	      String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
 	      
 	      String strFirstNum = req.getParameter("first_number");
-	      String strSecondNum = req.getParameter("second_number"); 
+	      String strSecondNum = req.getParameter("second_number");
+	      String operation = req.getParameter("option");
+	      
 	      
 	      if (isNumber(strFirstNum) && isNumber(strSecondNum)){
 	      
@@ -53,14 +55,25 @@ public class SumaNumeros  extends HttpServlet{
 		      
 		      double secondNum = Double.valueOf(strSecondNum);
 		      
-		      double sum = firstNum + secondNum; 
+		      double sum = 0; 
+		      
+		      switch (operation) {
+	            case "suma":   sum=firstNum + secondNum;
+	                     break;
+	            case "resta":  sum=firstNum - secondNum;
+	                     break;
+	            case "multiplica":  sum=firstNum * secondNum;
+	                     break;
+	            case "divide":  sum=firstNum / secondNum;
+	                     break;
+		      }
 		      
 		      out.println(docType +
 		         "<html>\n" +
 		            "<head><title>" + title + "</title></head>\n" +
 		            "<body bgcolor = \"#f0f0f0\">\n" +
 		 
-		               "<h1 align = \"center\"> La suma es: " + sum  + "</h1>\n" +
+		               "<h1 align = \"center\"> La " + operation + " es: " + sum  + "</h1>\n" +
 		               "<h2 align = \"center\">" + date.toString() + "</h2>\n" +
 		            "</body> </html>"
 		      );
@@ -71,7 +84,7 @@ public class SumaNumeros  extends HttpServlet{
 	 		            "<head><title>" + title + "</title></head>\n" +
 	 		            "<body bgcolor = \"#f0f0f0\">\n" +
 	 		 
-	 		               "<h1 align = \"center\"> No se puede hacer suma </h1>\n" +
+	 		               "<h1 align = \"center\"> No se puede hacer operacion </h1>\n" +
 	 		               "<h2 align = \"center\">" + date.toString() + "</h2>\n" +
 	 		            "</body> </html>"
 	 		      );
