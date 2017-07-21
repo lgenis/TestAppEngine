@@ -18,13 +18,13 @@
       <!--Nuestro Servlet -->
 
   <servlet>
-    <servlet-name>sumanumeros</servlet-name>
+    <servlet-name>calculadora</servlet-name>
     <servlet-class>SumaNumeros</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>sumanumeros</servlet-name>
-    <url-pattern>/sumanumeros</url-pattern>
+    <servlet-name>calculadora</servlet-name>
+    <url-pattern>/calculadora</url-pattern>
   </servlet-mapping>
   
    <welcome-file-list>
